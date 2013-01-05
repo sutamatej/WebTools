@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2012 for Web
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTools", "WebTools\WebTools.csproj", "{936E7F63-74D2-40DE-9476-7A5353A12D8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTools.Tests", "WebTools.Tests\WebTools.Tests.csproj", "{A85DFA47-4EE0-460E-BF15-4E33B467C98E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTools.Tests", "WebTools.Tests\WebTools.Tests.csproj", "{2EDCA501-205F-4435-98FE-36CF7203B711}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,10 @@ Global
 		{936E7F63-74D2-40DE-9476-7A5353A12D8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{936E7F63-74D2-40DE-9476-7A5353A12D8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{936E7F63-74D2-40DE-9476-7A5353A12D8F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A85DFA47-4EE0-460E-BF15-4E33B467C98E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A85DFA47-4EE0-460E-BF15-4E33B467C98E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A85DFA47-4EE0-460E-BF15-4E33B467C98E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A85DFA47-4EE0-460E-BF15-4E33B467C98E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EDCA501-205F-4435-98FE-36CF7203B711}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EDCA501-205F-4435-98FE-36CF7203B711}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EDCA501-205F-4435-98FE-36CF7203B711}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EDCA501-205F-4435-98FE-36CF7203B711}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
