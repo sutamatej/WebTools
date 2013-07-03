@@ -39,6 +39,9 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="Helpers\CheckBoxHelper.cs" />
+    <Compile Include="Helpers\HelperBase.cs" />
+    <Compile Include="Helpers\HiddenHelper.cs" />
+    <Compile Include="Helpers\InputBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

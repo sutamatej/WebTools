@@ -56,7 +56,8 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="Helpers\CheckboxHelperTests.cs" />
+    <Compile Include="Helpers\CheckBoxHelperTests.cs" />
+    <Compile Include="Helpers\HiddenHelperTests.cs" />
     <Compile Include="Helpers\HtmlHelperBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
