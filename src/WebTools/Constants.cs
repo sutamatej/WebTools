@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace WebTools
 {
-    public class Class1
+    public static class Constants
     {
+        public const string Class = "class";
+        public const string Id = "id";
     }
 }
