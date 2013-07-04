@@ -1,0 +1,11 @@
+﻿@model WebTools.Demo.Models.HomeModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@(Html.Hidden(m => m.Name).Id("testid").Class("testclass"))
+
+@(Html.CheckBox(m => m.Item).Disabled(true).Id("checkbox-id").Class("checkbox-class"))

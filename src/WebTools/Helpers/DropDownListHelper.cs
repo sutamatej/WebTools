@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 
@@ -37,14 +38,14 @@ namespace WebTools.Helpers
             _elementInstance = this;
         }
 
-        public override string ToString()
+        public string ToHtmlString()
         {
             var htmlString = _helper.DropDownListFor(_property, _items, _defaultItem, _htmlAttributes);
             return htmlString.ToString();
         }
     }
 
-    public interface IDropDownList : IInput<IDropDownList>
+    public interface IDropDownList : IInput<IDropDownList>, IHtmlString
     {
 
     }

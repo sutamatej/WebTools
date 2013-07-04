@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 
@@ -26,14 +27,14 @@ namespace WebTools.Helpers
             _elementInstance = this;
         }
 
-        public override string ToString()
+        public string ToHtmlString()
         {
             var htmlString = _helper.HiddenFor(_property, _htmlAttributes);
             return htmlString.ToString();
         }
     }
 
-    public interface IHidden : IInput<IHidden>
+    public interface IHidden : IInput<IHidden>, IHtmlString
     {
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 
@@ -30,14 +31,14 @@ namespace WebTools.Helpers
             _elementInstance = this;
         }
 
-        public override string ToString()
+        public string ToHtmlString()
         {
             var htmlString = _helper.LabelFor(_property, _labelText, _htmlAttributes);
             return htmlString.ToString();
         }
     }
 
-    public interface ILabel : IHtmlElement<ILabel>
+    public interface ILabel : IHtmlElement<ILabel>, IHtmlString
     {
     }
 }

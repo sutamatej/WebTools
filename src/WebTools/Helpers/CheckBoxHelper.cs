@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 
@@ -33,14 +34,14 @@ namespace WebTools.Helpers
             return this;
         }
 
-        public override string ToString()
+        public string ToHtmlString()
         {
             var htmlString = _helper.CheckBoxFor(_property, _htmlAttributes);
             return htmlString.ToString();
         }
     }
 
-    public interface ICheckBox : IInput<ICheckBox>
+    public interface ICheckBox : IInput<ICheckBox>, IHtmlString
     {
         ICheckBox Checked(bool @checked);
     }

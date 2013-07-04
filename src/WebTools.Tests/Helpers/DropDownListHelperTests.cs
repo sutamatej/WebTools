@@ -12,7 +12,7 @@ namespace WebTools.Tests.Helpers
         {
             var model = new DropDownListTestModel();
             var helper = HtmlHelperBuilder.GetHtmlHelper(model);
-            var result = helper.DropDownList(m => m.Value, model.SelectList).ToString();
+            var result = helper.DropDownList(m => m.Value, model.SelectList).ToHtmlString();
             Assert.Equal("<select id=\"Value\" name=\"Value\"><option value=\"1\">a</option>\r\n<option value=\"2\">b</option>\r\n<option value=\"3\">c</option>\r\n</select>", result);
         }
 
@@ -21,7 +21,7 @@ namespace WebTools.Tests.Helpers
         {
             var model = new DropDownListTestModel();
             var helper = HtmlHelperBuilder.GetHtmlHelper(model);
-            var result = helper.DropDownList(m => m.Value, model.SelectList, "default").ToString();
+            var result = helper.DropDownList(m => m.Value, model.SelectList, "default").ToHtmlString();
             Assert.Equal("<select id=\"Value\" name=\"Value\"><option value=\"\">default</option>\r\n<option value=\"1\">a</option>\r\n<option value=\"2\">b</option>\r\n<option value=\"3\">c</option>\r\n</select>", result);
         }
 
@@ -30,7 +30,7 @@ namespace WebTools.Tests.Helpers
         {
             var model = new DropDownListTestModel();
             var helper = HtmlHelperBuilder.GetHtmlHelper(model);
-            var result = helper.DropDownList(m => m.Value, model.SelectList).Class("some-class").ToString();
+            var result = helper.DropDownList(m => m.Value, model.SelectList).Class("some-class").ToHtmlString();
             Assert.Equal("<select class=\"some-class\" id=\"Value\" name=\"Value\"><option value=\"1\">a</option>\r\n<option value=\"2\">b</option>\r\n<option value=\"3\">c</option>\r\n</select>", result);
         }
 
@@ -39,7 +39,7 @@ namespace WebTools.Tests.Helpers
         {
             var model = new DropDownListTestModel();
             var helper = HtmlHelperBuilder.GetHtmlHelper(model);
-            var result = helper.DropDownList(m => m.Value, model.SelectList).Id("some-id").ToString();
+            var result = helper.DropDownList(m => m.Value, model.SelectList).Id("some-id").ToHtmlString();
             Assert.Equal("<select id=\"some-id\" name=\"Value\"><option value=\"1\">a</option>\r\n<option value=\"2\">b</option>\r\n<option value=\"3\">c</option>\r\n</select>", result);
         }
 
@@ -48,7 +48,7 @@ namespace WebTools.Tests.Helpers
         {
             var model = new DropDownListTestModel();
             var helper = HtmlHelperBuilder.GetHtmlHelper(model);
-            var result = helper.DropDownList(m => m.Value, model.SelectList).Disabled(true).ToString();
+            var result = helper.DropDownList(m => m.Value, model.SelectList).Disabled(true).ToHtmlString();
             Assert.Equal("<select disabled=\"disabled\" id=\"Value\" name=\"Value\"><option value=\"1\">a</option>\r\n<option value=\"2\">b</option>\r\n<option value=\"3\">c</option>\r\n</select>", result);
         }
 
@@ -57,7 +57,7 @@ namespace WebTools.Tests.Helpers
         {
             var model = new DropDownListTestModel();
             var helper = HtmlHelperBuilder.GetHtmlHelper(model);
-            var result = helper.DropDownList(m => m.Value, model.SelectList, "default").Id("test-id").Class("test-class").Disabled(true).ToString();
+            var result = helper.DropDownList(m => m.Value, model.SelectList, "default").Id("test-id").Class("test-class").Disabled(true).ToHtmlString();
             Assert.Equal("<select class=\"test-class\" disabled=\"disabled\" id=\"test-id\" name=\"Value\"><option value=\"\">default</option>\r\n<option value=\"1\">a</option>\r\n<option value=\"2\">b</option>\r\n<option value=\"3\">c</option>\r\n</select>", result);
         }
     }
