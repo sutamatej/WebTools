@@ -43,6 +43,7 @@
     <Compile Include="Helpers\HelperBase.cs" />
     <Compile Include="Helpers\HiddenHelper.cs" />
     <Compile Include="Helpers\InputBase.cs" />
+    <Compile Include="Helpers\LabelHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

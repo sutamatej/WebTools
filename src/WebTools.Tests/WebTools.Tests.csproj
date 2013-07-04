@@ -60,6 +60,7 @@
     <Compile Include="Helpers\DropDownListHelperTests.cs" />
     <Compile Include="Helpers\HiddenHelperTests.cs" />
     <Compile Include="Helpers\HtmlHelperBuilder.cs" />
+    <Compile Include="Helpers\LabelHelperTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
