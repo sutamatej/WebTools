@@ -17,7 +17,7 @@ namespace WebTools.Helpers
         }
     }
 
-    public class Label<TModel, TProperty> : HelperBase<ILabel>, ILabel
+    public class Label<TModel, TProperty> : HtmlElement<ILabel>, ILabel
     {
         private HtmlHelper<TModel> _helper;
         private Expression<Func<TModel, TProperty>> _property;

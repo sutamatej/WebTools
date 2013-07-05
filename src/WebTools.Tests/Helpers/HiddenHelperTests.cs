@@ -30,19 +30,11 @@ namespace WebTools.Tests.Helpers
         }
 
         [Fact]
-        public void Hidden_helper_renders_disabled_attribute()
-        {
-            var helper = HtmlHelperBuilder.GetHtmlHelper(new HiddenTestModel { SomeProperty = "fdsa" });
-            var result = helper.Hidden(m => m.SomeProperty).Disabled(true).ToHtmlString();
-            Assert.Equal("<input disabled=\"disabled\" id=\"SomeProperty\" name=\"SomeProperty\" type=\"hidden\" value=\"fdsa\" />", result);
-        }
-
-        [Fact]
         public void Hidden_helper_supports_attribute_combinations()
         {
             var helper = HtmlHelperBuilder.GetHtmlHelper(new HiddenTestModel { SomeProperty = "qwerty" });
-            var result = helper.Hidden(m => m.SomeProperty).Id("test-id").Class("some-class").Disabled(true).ToHtmlString();
-            Assert.Equal("<input class=\"some-class\" disabled=\"disabled\" id=\"test-id\" name=\"SomeProperty\" type=\"hidden\" value=\"qwerty\" />", result);
+            var result = helper.Hidden(m => m.SomeProperty).Id("test-id").Class("some-class").ToHtmlString();
+            Assert.Equal("<input class=\"some-class\" id=\"test-id\" name=\"SomeProperty\" type=\"hidden\" value=\"qwerty\" />", result);
         }
     }
 

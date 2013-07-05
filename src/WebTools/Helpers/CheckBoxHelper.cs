@@ -8,7 +8,7 @@ namespace WebTools.Helpers
 {
     public static class CheckBoxHelper
     {
-        public static ICheckBox CheckBox<TModel>(
+        public static ICheckable CheckBox<TModel>(
             this HtmlHelper<TModel> helper,
             Expression<Func<TModel, Boolean>> property)
         {
@@ -16,7 +16,7 @@ namespace WebTools.Helpers
         }
     }
 
-    public class CheckBox<TModel> : InputBase<TModel, ICheckBox>, ICheckBox
+    public class CheckBox<TModel> : Input<TModel, ICheckable>, ICheckable
     {
         private Expression<Func<TModel, Boolean>> _property;
 
@@ -27,7 +27,7 @@ namespace WebTools.Helpers
             _elementInstance = this;
         }
 
-        public ICheckBox Checked(bool @checked)
+        public ICheckable Checked(bool @checked)
         {
             if (@checked)
                 _htmlAttributes.Add(Constants.Checked, Constants.Checked);
@@ -41,8 +41,8 @@ namespace WebTools.Helpers
         }
     }
 
-    public interface ICheckBox : IInput<ICheckBox>, IHtmlString
+    public interface ICheckable : IInput<ICheckable>, IHtmlString
     {
-        ICheckBox Checked(bool @checked);
+        ICheckable Checked(bool @checked);
     }
 }

@@ -61,6 +61,7 @@
     <Compile Include="Helpers\HiddenHelperTests.cs" />
     <Compile Include="Helpers\HtmlHelperBuilder.cs" />
     <Compile Include="Helpers\LabelHelperTests.cs" />
+    <Compile Include="Helpers\TextBoxHelperTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Routing\WebRouteTests.cs" />
   </ItemGroup>

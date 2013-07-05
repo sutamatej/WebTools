@@ -19,8 +19,9 @@ namespace WebTools.Helpers
         }
     }
 
-    public class DropDownList<TModel, TProperty> : InputBase<TModel, IDropDownList>, IDropDownList
+    public class DropDownList<TModel, TProperty> : HtmlElement<IDropDownList>, IDropDownList
     {
+        private HtmlHelper<TModel> _helper;
         private Expression<Func<TModel, TProperty>> _property;
         private IEnumerable<SelectListItem> _items;
         private string _defaultItem;
@@ -30,12 +31,32 @@ namespace WebTools.Helpers
             Expression<Func<TModel, TProperty>> property,
             IEnumerable<SelectListItem> items,
             string defaultItem)
-            : base(helper)
         {
+            _helper = helper;
             _property = property;
             _items = items;
             _defaultItem = defaultItem;
             _elementInstance = this;
+        }
+
+        public IDropDownList Disabled(bool disabled)
+        {
+            if (disabled)
+                _htmlAttributes.Add(Constants.Disabled, String.Empty);
+            return this;
+        }
+
+        public IDropDownList Multiple(bool multiple)
+        {
+            if (multiple)
+                _htmlAttributes.Add(Constants.Multiple, String.Empty);
+            return this;
+        }
+
+        public IDropDownList Size(int size)
+        {
+            _htmlAttributes.Add(Constants.Size, size);
+            return this;
         }
 
         public string ToHtmlString()
@@ -45,8 +66,12 @@ namespace WebTools.Helpers
         }
     }
 
-    public interface IDropDownList : IInput<IDropDownList>, IHtmlString
+    public interface IDropDownList : IHtmlElement<IDropDownList>, IHtmlString
     {
+        IDropDownList Disabled(bool disabled);
 
+        IDropDownList Multiple(bool multiple);
+
+        IDropDownList Size(int size);
     }
 }

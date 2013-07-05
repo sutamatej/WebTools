@@ -2,12 +2,12 @@
 
 namespace WebTools.Helpers
 {
-    public abstract class HelperBase<TElement> : IHtmlElement<TElement>
+    public abstract class HtmlElement<TElement> : IHtmlElement<TElement>
     {
         protected IDictionary<string, object> _htmlAttributes;
         protected TElement _elementInstance;
 
-        public HelperBase()
+        public HtmlElement()
         {
             _htmlAttributes = new Dictionary<string, object>();
         }
