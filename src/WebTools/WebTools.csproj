@@ -45,6 +45,7 @@
     <Compile Include="Helpers\HiddenHelper.cs" />
     <Compile Include="Helpers\Input.cs" />
     <Compile Include="Helpers\LabelHelper.cs" />
+    <Compile Include="Helpers\PasswordHelper.cs" />
     <Compile Include="Helpers\RadioButtonHelper.cs" />
     <Compile Include="Helpers\TextBoxHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

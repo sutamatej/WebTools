@@ -8,7 +8,7 @@ namespace WebTools.Helpers
 {
     public static class TextBoxHelper
     {
-        public static ITextBox TextBox<TModel, TProperty>(
+        public static IText TextBox<TModel, TProperty>(
             this HtmlHelper<TModel> helper,
             Expression<Func<TModel, TProperty>> property)
         {
@@ -16,7 +16,7 @@ namespace WebTools.Helpers
         }
     }
 
-    public class TextBox<TModel, TProperty> : Input<TModel, ITextBox>, ITextBox
+    public class TextBox<TModel, TProperty> : Input<TModel, IText>, IText
     {
         private Expression<Func<TModel, TProperty>> _property;
 
@@ -34,7 +34,7 @@ namespace WebTools.Helpers
         }
     }
 
-    public interface ITextBox : IInput<ITextBox>, IHtmlString
+    public interface IText : IInput<IText>, IHtmlString
     {
     }
 }
