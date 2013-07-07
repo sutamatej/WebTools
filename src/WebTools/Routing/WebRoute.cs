@@ -10,15 +10,19 @@ namespace WebTools.Routing
     {
         public WebRoute(Expression<Action<TController>> action)
         {
+            Route = new RouteValueDictionary();
+
             var controllerTypeName = typeof(TController).Name;
             Controller = controllerTypeName.Replace(Constants.Conventions.Controller, String.Empty);
+            Route.Add(Constants.Conventions.Controller, Controller);
 
             var actionBody = action.Body as MethodCallExpression;
             Action = actionBody.Method.Name;
+            Route.Add(Constants.Conventions.Action, Action);
 
             var paramNames = actionBody.Method.GetParameters();
             var paramValues = actionBody.Arguments;
-            Values = new RouteValueDictionary();
+            Params = new RouteValueDictionary();
 
             for (int i = 0; i < paramNames.Length; i++)
             {
@@ -26,7 +30,8 @@ namespace WebTools.Routing
                 var lambda = Expression.Lambda(paramValues[i]);
                 var compiledExpr = lambda.Compile();
                 var value = compiledExpr.DynamicInvoke();
-                Values.Add(name, value);
+                Params.Add(name, value);
+                Route.Add(name, value);
             }
         }
 
@@ -34,6 +39,8 @@ namespace WebTools.Routing
 
         public string Action { get; private set; }
 
-        public RouteValueDictionary Values { get; private set; }
+        public RouteValueDictionary Params { get; private set; }
+
+        public RouteValueDictionary Route { get; private set; }
     }
 }

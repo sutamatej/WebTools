@@ -38,7 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
-    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ControllerExtensions.cs" />
     <Compile Include="Helpers\CheckBoxHelper.cs" />
     <Compile Include="Helpers\DropDownListHelper.cs" />
     <Compile Include="Helpers\HtmlElement.cs" />

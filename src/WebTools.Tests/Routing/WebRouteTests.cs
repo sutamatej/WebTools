@@ -26,20 +26,20 @@ namespace WebTools.Tests.Routing
         public void Web_route_parses_arguments_passed_into_action()
         {
             var route = new WebRoute<WebRouteTestController>(c => c.Get(7));
-            var result = (int)route.Values["id"];
+            var result = (int)route.Params["id"];
             Assert.Equal(7, result);
 
             route = new WebRoute<WebRouteTestController>(c => c.GetProducts("somename", 4, 7.25M));
-            var name = (string)route.Values["name"];
+            var name = (string)route.Params["name"];
             Assert.Equal("somename", name);
-            var id = (int)route.Values["id"];
+            var id = (int)route.Params["id"];
             Assert.Equal(4, id);
-            var value = (decimal)route.Values["value"];
+            var value = (decimal)route.Params["value"];
             Assert.Equal(7.25M, value);
 
             var model = new WebRouteTestModel { Id = 9, Name = "John", Value = 0.652M };
             route = new WebRoute<WebRouteTestController>(c => c.SaveProduct(model));
-            var argModel = (WebRouteTestModel)route.Values["model"];
+            var argModel = (WebRouteTestModel)route.Params["model"];
             Assert.Equal(9, argModel.Id);
             Assert.Equal("John", argModel.Name);
             Assert.Equal(0.652M, argModel.Value);

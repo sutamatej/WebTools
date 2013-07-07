@@ -5,6 +5,7 @@
         public static class Conventions
         {
             public const string Controller = "Controller";
+            public const string Action = "Action";
         }
 
         public static class HtmlAttributes
