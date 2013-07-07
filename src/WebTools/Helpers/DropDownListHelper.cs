@@ -42,20 +42,20 @@ namespace WebTools.Helpers
         public IDropDownList Disabled(bool disabled)
         {
             if (disabled)
-                _htmlAttributes.Add(Constants.Disabled, String.Empty);
+                _htmlAttributes.Add(Constants.HtmlAttributes.Disabled, String.Empty);
             return this;
         }
 
         public IDropDownList Multiple(bool multiple)
         {
             if (multiple)
-                _htmlAttributes.Add(Constants.Multiple, String.Empty);
+                _htmlAttributes.Add(Constants.HtmlAttributes.Multiple, String.Empty);
             return this;
         }
 
         public IDropDownList Size(int size)
         {
-            _htmlAttributes.Add(Constants.Size, size);
+            _htmlAttributes.Add(Constants.HtmlAttributes.Size, size);
             return this;
         }
 

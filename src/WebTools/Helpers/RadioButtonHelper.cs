@@ -35,7 +35,7 @@ namespace WebTools.Helpers
         public ICheckable Checked(bool @checked)
         {
             if (@checked)
-                _htmlAttributes.Add(Constants.Checked, Constants.Checked);
+                _htmlAttributes.Add(Constants.HtmlAttributes.Checked, Constants.HtmlAttributes.Checked);
             return this;
         }
 

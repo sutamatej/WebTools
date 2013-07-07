@@ -11,7 +11,7 @@ namespace WebTools.Routing
         public WebRoute(Expression<Action<TController>> action)
         {
             var controllerTypeName = typeof(TController).Name;
-            Controller = controllerTypeName.Replace(Constants.Controller, String.Empty);
+            Controller = controllerTypeName.Replace(Constants.Conventions.Controller, String.Empty);
 
             var actionBody = action.Body as MethodCallExpression;
             Action = actionBody.Method.Name;

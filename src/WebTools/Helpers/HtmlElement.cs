@@ -14,13 +14,13 @@ namespace WebTools.Helpers
 
         public TElement Class(string @class)
         {
-            _htmlAttributes.Add(Constants.Class, @class);
+            _htmlAttributes.Add(Constants.HtmlAttributes.Class, @class);
             return _elementInstance;
         }
 
         public TElement Id(string id)
         {
-            _htmlAttributes.Add(Constants.Id, id);
+            _htmlAttributes.Add(Constants.HtmlAttributes.Id, id);
             return _elementInstance;
         }
     }

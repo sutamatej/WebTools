@@ -16,20 +16,20 @@ namespace WebTools.Helpers
         public TElement Disabled(bool disabled)
         {
             if (disabled)
-                _htmlAttributes.Add(Constants.Disabled, Constants.Disabled);
+                _htmlAttributes.Add(Constants.HtmlAttributes.Disabled, Constants.HtmlAttributes.Disabled);
             return _elementInstance;
         }
 
         public TElement Readonly(bool @readonly)
         {
             if (@readonly)
-                _htmlAttributes.Add(Constants.Readonly, String.Empty);
+                _htmlAttributes.Add(Constants.HtmlAttributes.Readonly, String.Empty);
             return _elementInstance;
         }
 
         public TElement Size(int size)
         {
-            _htmlAttributes.Add(Constants.Size, size);
+            _htmlAttributes.Add(Constants.HtmlAttributes.Size, size);
             return _elementInstance;
         }
 
