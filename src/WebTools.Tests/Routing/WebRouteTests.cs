@@ -44,6 +44,23 @@ namespace WebTools.Tests.Routing
             Assert.Equal("John", argModel.Name);
             Assert.Equal(0.652M, argModel.Value);
         }
+
+        [Fact]
+        public void Web_route_parses_stores_everthing_in_route()
+        {
+
+            var route = new WebRoute<WebRouteTestController>(c => c.GetProducts("test", 9, 1.25M));
+            var controller = (string)route.Route["Controller"];
+            Assert.Equal(controller, "WebRouteTest");
+            var action = (string)route.Route["Action"];
+            Assert.Equal(action, "GetProducts");
+            var name = (string)route.Route["name"];
+            Assert.Equal(name, "test");
+            var id = (int)route.Route["id"];
+            Assert.Equal(id, 9);
+            var value = (decimal)route.Route["value"];
+            Assert.Equal(value, 1.25M);
+        }
     }
 
     public class WebRouteTestController : Controller
