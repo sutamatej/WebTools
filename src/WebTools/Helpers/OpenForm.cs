@@ -29,9 +29,9 @@ namespace WebTools.Helpers
         public string ToHtmlString()
         {
             var route = new WebRoute<TController>(_action);
-            var formTag = new TagBuilder("form");
-            formTag.MergeAttribute("action", String.Format("{0}/{1}", route.Controller, route.Action));
-            formTag.MergeAttribute("method", HtmlHelper.GetFormMethodString(_method));
+            var formTag = new TagBuilder(Constants.HtmlElements.Form);
+            formTag.MergeAttribute(Constants.HtmlAttributes.Action, String.Format("{0}/{1}", route.Controller, route.Action));
+            formTag.MergeAttribute(Constants.HtmlAttributes.Method, HtmlHelper.GetFormMethodString(_method));
             formTag.MergeAttributes(_htmlAttributes);
             return formTag.ToString(TagRenderMode.StartTag);
         }

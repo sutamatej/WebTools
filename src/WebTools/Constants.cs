@@ -8,12 +8,18 @@
             public const string Action = "Action";
         }
 
+        public static class HtmlElements
+        {
+            public const string Form = "form";
+        }
+
         public static class HtmlAttributes
         {
             public const string Class = "class";
             public const string Id = "id";
 
             public const string AccessKey = "accesskey";
+            public const string Action = "action";
             public const string Autocomplete = "autocomplete";
             public const string Autofocus = "autofocus";
             public const string Autosave = "autosave";
@@ -24,6 +30,7 @@
             public const string FormMethod = "formmethod";
             public const string FormNoValidate = "formnovalidate";
             public const string Max = "max";
+            public const string Method = "method";
             public const string Min = "min";
             public const string Multiple = "multiple";
             public const string Required = "required";

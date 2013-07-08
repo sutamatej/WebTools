@@ -11,7 +11,7 @@ namespace WebTools.Helpers
 
         public string ToHtmlString()
         {
-            var formTag = new TagBuilder("form");
+            var formTag = new TagBuilder(Constants.HtmlElements.Form);
             return formTag.ToString(TagRenderMode.EndTag);
         }
     }
