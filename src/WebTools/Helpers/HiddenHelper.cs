@@ -27,17 +27,17 @@ namespace WebTools.Helpers
             _attributeLoader = new AttributeLoader<IHidden>(this, _htmlAttributes);
         }
 
-        public IHidden Disabled(bool disabled)
+        public override IHidden Disabled(bool disabled)
         {
             return this;
         }
 
-        public IHidden Readonly(bool @readonly)
+        public override IHidden Readonly(bool @readonly)
         {
             return this;
         }
 
-        public IHidden Size(int size)
+        public override IHidden Size(int size)
         {
             return this;
         }

@@ -37,17 +37,12 @@ namespace WebTools.Helpers
             return _attributeLoader.Checked(@checked);
         }
 
-        public ICheckable Disabled(bool disabled)
-        {
-            return _attributeLoader.Disabled(disabled);
-        }
-
-        public ICheckable Readonly(bool @readonly)
+        public override ICheckable Readonly(bool @readonly)
         {
             return this;
         }
 
-        public ICheckable Size(int size)
+        public override ICheckable Size(int size)
         {
             return this;
         }

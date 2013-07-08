@@ -26,21 +26,6 @@ namespace WebTools.Helpers
             _attributeLoader = new AttributeLoader<IText>(this, _htmlAttributes);
         }
 
-        public IText Disabled(bool disabled)
-        {
-            return _attributeLoader.Disabled(disabled);
-        }
-
-        public IText Readonly(bool @readonly)
-        {
-            return _attributeLoader.Readonly(@readonly);
-        }
-
-        public IText Size(int size)
-        {
-            return _attributeLoader.Size(size);
-        }
-
         public string ToHtmlString()
         {
             var htmlString = _helper.PasswordFor(_property, _htmlAttributes);
