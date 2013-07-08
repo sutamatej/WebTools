@@ -57,10 +57,12 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Helpers\CheckBoxHelperTests.cs" />
+    <Compile Include="Helpers\CloseFormHelperTests.cs" />
     <Compile Include="Helpers\DropDownListHelperTests.cs" />
     <Compile Include="Helpers\HiddenHelperTests.cs" />
     <Compile Include="Helpers\HtmlHelperBuilder.cs" />
     <Compile Include="Helpers\LabelHelperTests.cs" />
+    <Compile Include="Helpers\OpenFormHelperTests.cs" />
     <Compile Include="Helpers\PasswordHelperTests.cs" />
     <Compile Include="Helpers\RadioButtonHelperTests.cs" />
     <Compile Include="Helpers\TextAreaHelperTests.cs" />

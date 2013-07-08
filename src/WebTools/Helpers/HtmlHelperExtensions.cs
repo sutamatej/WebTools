@@ -14,6 +14,12 @@ namespace WebTools.Helpers
             return new CheckBox<TModel>(helper, property);
         }
 
+        public static CloseForm CloseForm(
+            this HtmlHelper helper)
+        {
+            return new CloseForm();
+        }
+
         public static IDropDownList DropDownList<TModel, TProperty>(
             this HtmlHelper<TModel> helper,
             Expression<Func<TModel, TProperty>> property,
@@ -21,15 +27,6 @@ namespace WebTools.Helpers
             string defaultItem = null)
         {
             return new DropDownList<TModel, TProperty>(helper, property, items, defaultItem);
-        }
-
-        public static IForm BeginForm<TController>(
-            this HtmlHelper helper,
-            Expression<Action<TController>> action,
-            FormMethod method)
-            where TController : Controller
-        {
-            return new Form<TController>(helper, action, method);
         }
 
         public static IHidden Hidden<TModel, TProperty>(
@@ -45,6 +42,15 @@ namespace WebTools.Helpers
             string labelText)
         {
             return new Label<TModel, TProperty>(helper, property, labelText);
+        }
+
+        public static IForm OpenForm<TController>(
+            this HtmlHelper helper,
+            Expression<Action<TController>> action,
+            FormMethod method)
+            where TController : Controller
+        {
+            return new OpenForm<TController>(helper, action, method);
         }
 
         public static IText Password<TModel, TProperty>(

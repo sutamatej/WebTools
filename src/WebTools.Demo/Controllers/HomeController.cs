@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebTools.Controllers;
+using WebTools.Demo.Models;
 
 namespace WebTools.Demo.Controllers
 {
@@ -25,6 +26,11 @@ namespace WebTools.Demo.Controllers
         public ActionResult Land()
         {
             return View();
+        }
+
+        public ActionResult Save(HomeModel model)
+        {
+            return this.RedirectToAction(c => c.Land());
         }
     }
 }

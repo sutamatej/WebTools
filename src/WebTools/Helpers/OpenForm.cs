@@ -2,19 +2,18 @@
 using System.Linq.Expressions;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Mvc.Html;
 using WebTools.Routing;
 
 namespace WebTools.Helpers
 {
-    public class Form<TController> : HtmlElement<IForm>, IForm
+    public class OpenForm<TController> : HtmlElement<IForm>, IForm
         where TController : Controller
     {
         private HtmlHelper _helper;
         private Expression<Action<TController>> _action;
         private FormMethod _method;
 
-        public Form(HtmlHelper helper, Expression<Action<TController>> action, FormMethod method)
+        public OpenForm(HtmlHelper helper, Expression<Action<TController>> action, FormMethod method)
         {
             _helper = helper;
             _action = action;
@@ -29,8 +28,12 @@ namespace WebTools.Helpers
 
         public string ToHtmlString()
         {
-            var webRoute = new WebRoute<TController>(_action);
-            return _helper.BeginForm(webRoute.Action, webRoute.Controller, webRoute.Params, _method, _htmlAttributes).ToString();
+            var route = new WebRoute<TController>(_action);
+            var formTag = new TagBuilder("form");
+            formTag.MergeAttribute("action", String.Format("{0}/{1}", route.Controller, route.Action));
+            formTag.MergeAttribute("method", HtmlHelper.GetFormMethodString(_method));
+            formTag.MergeAttributes(_htmlAttributes);
+            return formTag.ToString(TagRenderMode.StartTag);
         }
     }
 

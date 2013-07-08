@@ -6,10 +6,12 @@
 
 <h2>Index</h2>
 
-@(Html.Hidden(m => m.Name).Id("testid").Class("testclass"))
+@(Html.OpenForm<WebTools.Demo.Controllers.HomeController>(c => c.Save(null), FormMethod.Post).Class("test-class"))
 
-@(Html.CheckBox(m => m.Item).Disabled(true).Id("checkbox-id").Class("checkbox-class"))
+    @(Html.Hidden(m => m.Name).Id("testid").Class("testclass"))
 
-@Html.ActionLink("test redirect", "Go")
+    @(Html.CheckBox(m => m.Item).Disabled(true).Id("checkbox-id").Class("checkbox-class"))
 
-@Html.BeginForm()
+    @Html.ActionLink("test redirect", "Go")
+
+@Html.CloseForm()

@@ -35,6 +35,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
@@ -42,8 +43,9 @@
     <Compile Include="Enums.cs" />
     <Compile Include="Helpers\AttributeLoader.cs" />
     <Compile Include="Helpers\CheckBox.cs" />
+    <Compile Include="Helpers\CloseForm.cs" />
     <Compile Include="Helpers\DropDownList.cs" />
-    <Compile Include="Helpers\Form.cs" />
+    <Compile Include="Helpers\OpenForm.cs" />
     <Compile Include="Helpers\HtmlElement.cs" />
     <Compile Include="Helpers\Hidden.cs" />
     <Compile Include="Helpers\HtmlHelperExtensions.cs" />
