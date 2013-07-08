@@ -39,8 +39,11 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="Controllers\ControllerExtensions.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Helpers\AttributeLoader.cs" />
     <Compile Include="Helpers\CheckBoxHelper.cs" />
     <Compile Include="Helpers\DropDownListHelper.cs" />
+    <Compile Include="Helpers\FormHelper.cs" />
     <Compile Include="Helpers\HtmlElement.cs" />
     <Compile Include="Helpers\HiddenHelper.cs" />
     <Compile Include="Helpers\Input.cs" />

@@ -33,6 +33,7 @@
             public const string SelectedIndex = "selectedIndex";
             public const string Size = "size";
             public const string Step = "step";
+            public const string Target = "target";
             public const string Value = "value";
         }
 
@@ -46,6 +47,11 @@
             public const string Backward = "backward";
 
             public const string Any = "any";
+
+            public const string Self = "_self";
+            public const string Blank = "_blank";
+            public const string Parent = "_parent";
+            public const string Top = "_top";
         }
     }
 }

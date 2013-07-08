@@ -34,7 +34,7 @@ namespace WebTools.Tests.Helpers
         {
             var helper = HtmlHelperBuilder.GetHtmlHelper(new CheckBoxTestModel { SomeProperty = true });
             var result = helper.CheckBox(m => m.SomeProperty).Disabled(true).ToHtmlString();
-            Assert.Equal("<input checked=\"checked\" disabled=\"disabled\" id=\"SomeProperty\" name=\"SomeProperty\" type=\"checkbox\" value=\"true\" /><input name=\"SomeProperty\" type=\"hidden\" value=\"false\" />", result);
+            Assert.Equal("<input checked=\"checked\" disabled=\"\" id=\"SomeProperty\" name=\"SomeProperty\" type=\"checkbox\" value=\"true\" /><input name=\"SomeProperty\" type=\"hidden\" value=\"false\" />", result);
         }
 
         [Fact]
@@ -50,7 +50,7 @@ namespace WebTools.Tests.Helpers
         {
             var helper = HtmlHelperBuilder.GetHtmlHelper(new CheckBoxTestModel { SomeProperty = true });
             var result = helper.CheckBox(m => m.SomeProperty).Class("test-class").Id("test-id").Checked(true).Disabled(true).ToHtmlString();
-            Assert.Equal("<input checked=\"checked\" class=\"test-class\" disabled=\"disabled\" id=\"test-id\" name=\"SomeProperty\" type=\"checkbox\" value=\"true\" /><input name=\"SomeProperty\" type=\"hidden\" value=\"false\" />", result);
+            Assert.Equal("<input checked=\"checked\" class=\"test-class\" disabled=\"\" id=\"test-id\" name=\"SomeProperty\" type=\"checkbox\" value=\"true\" /><input name=\"SomeProperty\" type=\"hidden\" value=\"false\" />", result);
         }
     }
 

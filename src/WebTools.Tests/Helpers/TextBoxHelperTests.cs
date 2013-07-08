@@ -34,7 +34,7 @@ namespace WebTools.Tests.Helpers
         {
             var helper = HtmlHelperBuilder.GetHtmlHelper(new TextBoxTestModel());
             var result = helper.TextBox(m => m.Text).Disabled(true).ToHtmlString();
-            Assert.Equal("<input disabled=\"disabled\" id=\"Text\" name=\"Text\" type=\"text\" value=\"\" />", result);
+            Assert.Equal("<input disabled=\"\" id=\"Text\" name=\"Text\" type=\"text\" value=\"\" />", result);
         }
 
         [Fact]
@@ -58,7 +58,7 @@ namespace WebTools.Tests.Helpers
         {
             var helper = HtmlHelperBuilder.GetHtmlHelper(new TextBoxTestModel());
             var result = helper.TextBox(m => m.Text).Class("test-class").Id("test-id").Size(7).Readonly(true).Disabled(true).ToHtmlString();
-            Assert.Equal("<input class=\"test-class\" disabled=\"disabled\" id=\"test-id\" name=\"Text\" readonly=\"\" size=\"7\" type=\"text\" value=\"\" />", result);
+            Assert.Equal("<input class=\"test-class\" disabled=\"\" id=\"test-id\" name=\"Text\" readonly=\"\" size=\"7\" type=\"text\" value=\"\" />", result);
         }
     }
 

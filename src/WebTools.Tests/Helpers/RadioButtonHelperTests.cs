@@ -34,7 +34,7 @@ namespace WebTools.Tests.Helpers
         {
             var helper = HtmlHelperBuilder.GetHtmlHelper(new RadioButtonTestModel());
             var result = helper.RadioButton(m => m.Value, RadioButtonTestEnum.Second).Disabled(true).ToHtmlString();
-            Assert.Equal("<input disabled=\"disabled\" id=\"Value\" name=\"Value\" type=\"radio\" value=\"Second\" />", result);
+            Assert.Equal("<input disabled=\"\" id=\"Value\" name=\"Value\" type=\"radio\" value=\"Second\" />", result);
         }
 
         [Fact]
@@ -50,7 +50,7 @@ namespace WebTools.Tests.Helpers
         {
             var helper = HtmlHelperBuilder.GetHtmlHelper(new RadioButtonTestModel());
             var result = helper.RadioButton(m => m.Value, RadioButtonTestEnum.First).Id("some-id").Disabled(true).Class("some-class").Checked(true).ToHtmlString();
-            Assert.Equal("<input checked=\"checked\" class=\"some-class\" disabled=\"disabled\" id=\"some-id\" name=\"Value\" type=\"radio\" value=\"First\" />", result);
+            Assert.Equal("<input checked=\"checked\" class=\"some-class\" disabled=\"\" id=\"some-id\" name=\"Value\" type=\"radio\" value=\"First\" />", result);
         }
     }
 

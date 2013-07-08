@@ -28,7 +28,7 @@ namespace WebTools.Helpers
             _helper = helper;
             _property = property;
             _labelText = labelText;
-            _elementInstance = this;
+            _attributeLoader = new AttributeLoader<ILabel>(this, _htmlAttributes);
         }
 
         public string ToHtmlString()

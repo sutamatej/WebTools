@@ -29,13 +29,26 @@ namespace WebTools.Helpers
         {
             _property = property;
             _value = value;
-            _elementInstance = this;
+            _attributeLoader = new AttributeLoader<ICheckable>(this, _htmlAttributes);
         }
 
         public ICheckable Checked(bool @checked)
         {
-            if (@checked)
-                _htmlAttributes.Add(Constants.HtmlAttributes.Checked, Constants.HtmlAttributes.Checked);
+            return _attributeLoader.Checked(@checked);
+        }
+
+        public ICheckable Disabled(bool disabled)
+        {
+            return _attributeLoader.Disabled(disabled);
+        }
+
+        public ICheckable Readonly(bool @readonly)
+        {
+            return this;
+        }
+
+        public ICheckable Size(int size)
+        {
             return this;
         }
 

@@ -36,27 +36,22 @@ namespace WebTools.Helpers
             _property = property;
             _items = items;
             _defaultItem = defaultItem;
-            _elementInstance = this;
+            _attributeLoader = new AttributeLoader<IDropDownList>(this, _htmlAttributes);
         }
 
         public IDropDownList Disabled(bool disabled)
         {
-            if (disabled)
-                _htmlAttributes.Add(Constants.HtmlAttributes.Disabled, String.Empty);
-            return this;
+            return _attributeLoader.Disabled(disabled);
         }
 
         public IDropDownList Multiple(bool multiple)
         {
-            if (multiple)
-                _htmlAttributes.Add(Constants.HtmlAttributes.Multiple, String.Empty);
-            return this;
+            return _attributeLoader.Multiple(multiple);
         }
 
         public IDropDownList Size(int size)
         {
-            _htmlAttributes.Add(Constants.HtmlAttributes.Size, size);
-            return this;
+            return _attributeLoader.Size(size);
         }
 
         public string ToHtmlString()

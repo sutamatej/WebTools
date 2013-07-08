@@ -25,33 +25,27 @@ namespace WebTools.Helpers
         {
             _helper = helper;
             _property = property;
-            _elementInstance = this;
+            _attributeLoader = new AttributeLoader<ITextArea>(this, _htmlAttributes);
         }
 
         public ITextArea Cols(int cols)
         {
-            _htmlAttributes.Add(Constants.HtmlAttributes.Cols, cols);
-            return this;
+            return _attributeLoader.Cols(cols);
         }
 
         public ITextArea Disabled(bool disabled)
         {
-            if (@disabled)
-                _htmlAttributes.Add(Constants.HtmlAttributes.Disabled, String.Empty);
-            return this;
+            return _attributeLoader.Disabled(disabled);
         }
 
         public ITextArea Readonly(bool @readonly)
         {
-            if (@readonly)
-                _htmlAttributes.Add(Constants.HtmlAttributes.Readonly, String.Empty);
-            return this;
+            return _attributeLoader.Readonly(@readonly);
         }
 
         public ITextArea Rows(int rows)
         {
-            _htmlAttributes.Add(Constants.HtmlAttributes.Rows, rows);
-            return this;
+            return _attributeLoader.Rows(rows);
         }
 
         public string ToHtmlString()

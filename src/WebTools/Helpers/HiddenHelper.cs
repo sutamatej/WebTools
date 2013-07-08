@@ -24,7 +24,22 @@ namespace WebTools.Helpers
             : base(helper)
         {
             _property = property;
-            _elementInstance = this;
+            _attributeLoader = new AttributeLoader<IHidden>(this, _htmlAttributes);
+        }
+
+        public IHidden Disabled(bool disabled)
+        {
+            return this;
+        }
+
+        public IHidden Readonly(bool @readonly)
+        {
+            return this;
+        }
+
+        public IHidden Size(int size)
+        {
+            return this;
         }
 
         public string ToHtmlString()

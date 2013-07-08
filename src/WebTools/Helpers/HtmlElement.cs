@@ -5,7 +5,7 @@ namespace WebTools.Helpers
     public abstract class HtmlElement<TElement> : IHtmlElement<TElement>
     {
         protected IDictionary<string, object> _htmlAttributes;
-        protected TElement _elementInstance;
+        protected AttributeLoader<TElement> _attributeLoader;
 
         public HtmlElement()
         {
@@ -14,14 +14,12 @@ namespace WebTools.Helpers
 
         public TElement Class(string @class)
         {
-            _htmlAttributes.Add(Constants.HtmlAttributes.Class, @class);
-            return _elementInstance;
+            return _attributeLoader.Class(@class);
         }
 
         public TElement Id(string id)
         {
-            _htmlAttributes.Add(Constants.HtmlAttributes.Id, id);
-            return _elementInstance;
+            return _attributeLoader.Id(id);
         }
     }
 

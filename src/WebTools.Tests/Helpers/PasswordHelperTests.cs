@@ -34,7 +34,7 @@ namespace WebTools.Tests.Helpers
         {
             var helper = HtmlHelperBuilder.GetHtmlHelper(new PasswordTestModel());
             var result = helper.Password(m => m.Password).Disabled(true).ToHtmlString();
-            Assert.Equal("<input disabled=\"disabled\" id=\"Password\" name=\"Password\" type=\"password\" />", result);
+            Assert.Equal("<input disabled=\"\" id=\"Password\" name=\"Password\" type=\"password\" />", result);
         }
 
         [Fact]
@@ -58,7 +58,7 @@ namespace WebTools.Tests.Helpers
         {
             var helper = HtmlHelperBuilder.GetHtmlHelper(new PasswordTestModel());
             var result = helper.Password(m => m.Password).Size(7).Class("test-class").Disabled(true).Readonly(true).Id("test-id").ToHtmlString();
-            Assert.Equal("<input class=\"test-class\" disabled=\"disabled\" id=\"test-id\" name=\"Password\" readonly=\"\" size=\"7\" type=\"password\" />", result);
+            Assert.Equal("<input class=\"test-class\" disabled=\"\" id=\"test-id\" name=\"Password\" readonly=\"\" size=\"7\" type=\"password\" />", result);
         }
     }
 
