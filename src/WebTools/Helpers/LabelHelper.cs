@@ -6,17 +6,6 @@ using System.Web.Mvc.Html;
 
 namespace WebTools.Helpers
 {
-    public static class LabelHelper
-    {
-        public static ILabel Label<TModel, TProperty>(
-            this HtmlHelper<TModel> helper,
-            Expression<Func<TModel, TProperty>> property,
-            string labelText)
-        {
-            return new Label<TModel, TProperty>(helper, property, labelText);
-        }
-    }
-
     public class Label<TModel, TProperty> : HtmlElement<ILabel>, ILabel
     {
         private HtmlHelper<TModel> _helper;

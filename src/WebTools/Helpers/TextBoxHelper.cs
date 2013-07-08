@@ -6,16 +6,6 @@ using System.Web.Mvc.Html;
 
 namespace WebTools.Helpers
 {
-    public static class TextBoxHelper
-    {
-        public static IText TextBox<TModel, TProperty>(
-            this HtmlHelper<TModel> helper,
-            Expression<Func<TModel, TProperty>> property)
-        {
-            return new TextBox<TModel, TProperty>(helper, property);
-        }
-    }
-
     public class TextBox<TModel, TProperty> : Input<TModel, IText>, IText
     {
         private Expression<Func<TModel, TProperty>> _property;

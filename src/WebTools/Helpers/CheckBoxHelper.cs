@@ -6,16 +6,6 @@ using System.Web.Mvc.Html;
 
 namespace WebTools.Helpers
 {
-    public static class CheckBoxHelper
-    {
-        public static ICheckable CheckBox<TModel>(
-            this HtmlHelper<TModel> helper,
-            Expression<Func<TModel, Boolean>> property)
-        {
-            return new CheckBox<TModel>(helper, property);
-        }
-    }
-
     public class CheckBox<TModel> : Input<TModel, ICheckable>, ICheckable
     {
         private Expression<Func<TModel, Boolean>> _property;

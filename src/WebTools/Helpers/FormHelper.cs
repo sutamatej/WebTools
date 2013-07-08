@@ -7,18 +7,6 @@ using WebTools.Routing;
 
 namespace WebTools.Helpers
 {
-    public static class FormHelper
-    {
-        public static IForm BeginForm<TController>(
-            this HtmlHelper helper,
-            Expression<Action<TController>> action,
-            FormMethod method)
-            where TController : Controller
-        {
-            return new Form<TController>(helper, action, method);
-        }
-    }
-
     public class Form<TController> : HtmlElement<IForm>, IForm
         where TController : Controller
     {

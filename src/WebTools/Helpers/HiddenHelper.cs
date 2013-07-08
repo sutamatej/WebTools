@@ -6,16 +6,6 @@ using System.Web.Mvc.Html;
 
 namespace WebTools.Helpers
 {
-    public static class HiddenHelper
-    {
-        public static IHidden Hidden<TModel, TProperty>(
-            this HtmlHelper<TModel> helper,
-            Expression<Func<TModel, TProperty>> property)
-        {
-            return new Hidden<TModel, TProperty>(helper, property);
-        }
-    }
-
     public class Hidden<TModel, TProperty> : Input<TModel, IHidden>, IHidden
     {
         private Expression<Func<TModel, TProperty>> _property;

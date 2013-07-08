@@ -46,6 +46,7 @@
     <Compile Include="Helpers\FormHelper.cs" />
     <Compile Include="Helpers\HtmlElement.cs" />
     <Compile Include="Helpers\HiddenHelper.cs" />
+    <Compile Include="Helpers\HtmlHelperExtensions.cs" />
     <Compile Include="Helpers\Input.cs" />
     <Compile Include="Helpers\LabelHelper.cs" />
     <Compile Include="Helpers\PasswordHelper.cs" />

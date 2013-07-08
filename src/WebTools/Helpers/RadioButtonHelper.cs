@@ -5,17 +5,6 @@ using System.Web.Mvc.Html;
 
 namespace WebTools.Helpers
 {
-    public static class RadioButtonHelper
-    {
-        public static ICheckable RadioButton<TModel, TProperty>(
-            this HtmlHelper<TModel> helper,
-            Expression<Func<TModel, TProperty>> property,
-            TProperty value)
-        {
-            return new RadioButton<TModel, TProperty>(helper, property, value);
-        }
-    }
-
     public class RadioButton<TModel, TProperty> : Input<TModel, ICheckable>, ICheckable
     {
         private Expression<Func<TModel, TProperty>> _property;

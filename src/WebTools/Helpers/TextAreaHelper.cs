@@ -6,16 +6,6 @@ using System.Web.Mvc.Html;
 
 namespace WebTools.Helpers
 {
-    public static class TextAreaHelper
-    {
-        public static ITextArea TextArea<TModel, TProperty>(
-            this HtmlHelper<TModel> helper,
-            Expression<Func<TModel, TProperty>> property)
-        {
-            return new TextArea<TModel, TProperty>(helper, property);
-        }
-    }
-
     public class TextArea<TModel, TProperty> : HtmlElement<ITextArea>, ITextArea
     {
         private HtmlHelper<TModel> _helper;
