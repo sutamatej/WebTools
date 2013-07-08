@@ -47,6 +47,7 @@
     <Compile Include="Helpers\LabelHelper.cs" />
     <Compile Include="Helpers\PasswordHelper.cs" />
     <Compile Include="Helpers\RadioButtonHelper.cs" />
+    <Compile Include="Helpers\TextAreaHelper.cs" />
     <Compile Include="Helpers\TextBoxHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Routing\WebRoute.cs" />

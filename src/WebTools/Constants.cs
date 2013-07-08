@@ -18,6 +18,7 @@
             public const string Autofocus = "autofocus";
             public const string Autosave = "autosave";
             public const string Checked = "checked";
+            public const string Cols = "cols";
             public const string Disabled = "disabled";
             public const string Form = "form";
             public const string FormMethod = "formmethod";
@@ -27,6 +28,7 @@
             public const string Multiple = "multiple";
             public const string Required = "required";
             public const string Readonly = "readonly";
+            public const string Rows = "rows";
             public const string SelectionDirection = "selectionDirection";
             public const string SelectedIndex = "selectedIndex";
             public const string Size = "size";
