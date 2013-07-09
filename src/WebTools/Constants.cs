@@ -33,6 +33,7 @@
             public const string Method = "method";
             public const string Min = "min";
             public const string Multiple = "multiple";
+            public const string Rel = "rel";
             public const string Required = "required";
             public const string Readonly = "readonly";
             public const string Rows = "rows";

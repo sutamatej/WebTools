@@ -7,6 +7,15 @@ namespace WebTools.Helpers
 {
     public static class HtmlHelperExtensions
     {
+        public static IActionLink ActionLink<TController>(
+            this HtmlHelper helper,
+            Expression<Action<TController>> action,
+            string linkText)
+            where TController : Controller
+        {
+            return new ActionLink<TController>(helper, action, linkText);
+        }
+
         public static ICheckable CheckBox<TModel>(
             this HtmlHelper<TModel> helper,
             Expression<Func<TModel, Boolean>> property)

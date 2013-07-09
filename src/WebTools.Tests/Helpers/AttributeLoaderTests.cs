@@ -105,6 +105,16 @@ namespace WebTools.Tests.Helpers
             Assert.Equal(3, attributes["rows"]);
             Assert.IsType<ElementTestInstance>(result);
         }
+
+        [Fact]
+        public void Attribute_loader_adds_rel_attribute()
+        {
+            var attributes = new Dictionary<string, object>();
+            var loader = new AttributeLoader<ElementTestInstance>(new ElementTestInstance(), attributes);
+            var result = loader.Rel("test");
+            Assert.Equal("test", attributes["rel"]);
+            Assert.IsType<ElementTestInstance>(result);
+        }
     }
 
     public class ElementTestInstance

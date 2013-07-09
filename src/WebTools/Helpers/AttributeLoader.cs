@@ -85,5 +85,11 @@ namespace WebTools.Helpers
             _htmlAttributes.Add(Constants.HtmlAttributes.Rows, rows);
             return _elementInstance;
         }
+
+        public TElement Rel(string rel)
+        {
+            _htmlAttributes.Add(Constants.HtmlAttributes.Rel, rel);
+            return _elementInstance;
+        }
     }
 }

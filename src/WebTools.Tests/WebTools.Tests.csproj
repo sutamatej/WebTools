@@ -56,6 +56,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Helpers\ActionLinkHelperTests.cs" />
     <Compile Include="Helpers\AttributeLoaderTests.cs" />
     <Compile Include="Helpers\CheckBoxHelperTests.cs" />
     <Compile Include="Helpers\CloseFormHelperTests.cs" />

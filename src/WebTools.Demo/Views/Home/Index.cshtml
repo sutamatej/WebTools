@@ -1,4 +1,5 @@
-﻿@model WebTools.Demo.Models.HomeModel
+﻿@using WebTools.Demo.Controllers
+@model WebTools.Demo.Models.HomeModel
 
 @{
     ViewBag.Title = "Index";
@@ -6,12 +7,12 @@
 
 <h2>Index</h2>
 
-@(Html.OpenForm<WebTools.Demo.Controllers.HomeController>(c => c.Save(null), FormMethod.Post).Class("test-class"))
+@(Html.OpenForm<HomeController>(c => c.Save(null), FormMethod.Post).Class("test-class"))
 
     @(Html.Hidden(m => m.Name).Id("testid").Class("testclass"))
 
     @(Html.CheckBox(m => m.Item).Disabled(true).Id("checkbox-id").Class("checkbox-class"))
 
-    @Html.ActionLink("test redirect", "Go")
-
 @Html.CloseForm()
+
+@(Html.ActionLink<HomeController>(c => c.Land(), "Go to Land").Id("test-id").Class("test-class").Target(WebTools.Enums.ActionTarget.Blank))

@@ -41,6 +41,7 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Controllers\ControllerExtensions.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="Helpers\ActionLink.cs" />
     <Compile Include="Helpers\AttributeLoader.cs" />
     <Compile Include="Helpers\CheckBox.cs" />
     <Compile Include="Helpers\CloseForm.cs" />
