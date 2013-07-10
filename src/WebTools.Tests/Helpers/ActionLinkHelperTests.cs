@@ -9,6 +9,10 @@ namespace WebTools.Tests.Helpers
         [Fact]
         public void Action_link_helper_renders_html()
         {
+            var controller = new ActionLinkTestController();
+            var helper = HtmlHelperBuilder.GetSimpleHtmlHelper(controller);
+            var result = helper.ActionLink<ActionLinkTestController>(c => c.Get(4), "Get").ToHtmlString();
+            Assert.Equal("", result);
         }
     }
 
