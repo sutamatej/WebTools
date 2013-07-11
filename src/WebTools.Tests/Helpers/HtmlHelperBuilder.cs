@@ -10,7 +10,7 @@ namespace WebTools.Tests.Helpers
 {
     public static class HtmlHelperBuilder
     {
-        public static HtmlHelper<TModel> GetHtmlHelper<TModel>(TModel model)
+        public static HtmlHelper<TModel> GetTypedHtmlHelper<TModel>(TModel model)
         {
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new Mock<IViewEngine>().Object);
@@ -46,17 +46,15 @@ namespace WebTools.Tests.Helpers
             return htmlHelper;
         }
 
-        public static HtmlHelper GetSimpleHtmlHelper<TController>(TController controller)
+        public static HtmlHelper GetHtmlHelper<TController>(TController controller)
             where TController : Controller
         {
-            var httpContext = new Mock<HttpContextBase>().Object;
+            var httpContext = new Mock<HttpContextBase>();
+            httpContext.Setup(c => c.Request.ApplicationPath).Returns(@"/");
+            httpContext.Setup(c => c.Response.ApplyAppPathModifier(It.IsAny<string>())).Returns((string s) => s);
 
-            //var routeHandler = new MvcRouteHandler(new DefaultControllerFactory());
             var routeData = new RouteData();
-            //routeData.Route = new Route("{controller}/{action}/{id}", routeHandler);
-
-            var requestContext = new RequestContext(httpContext, routeData);
-
+            var requestContext = new RequestContext(httpContext.Object, routeData);
             var controllerContext = new ControllerContext(requestContext, controller);
 
             var viewContext = new Mock<ViewContext>();
@@ -66,7 +64,7 @@ namespace WebTools.Tests.Helpers
             viewContext.Setup(vc => vc.TempData).Returns(new TempDataDictionary());
             viewContext.Setup(vc => vc.Writer).Returns(new StringWriter(new StringBuilder()));
             viewContext.Setup(vc => vc.RouteData).Returns(routeData);
-            viewContext.Setup(vc => vc.HttpContext).Returns(httpContext);
+            viewContext.Setup(vc => vc.HttpContext).Returns(httpContext.Object);
             viewContext.Setup(vc => vc.ClientValidationEnabled).Returns(false);
             viewContext.Setup(vc => vc.UnobtrusiveJavaScriptEnabled).Returns(false);
             viewContext.Setup(vc => vc.FormContext).Returns(new Mock<FormContext>().Object);

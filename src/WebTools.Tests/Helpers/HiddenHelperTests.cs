@@ -8,7 +8,7 @@ namespace WebTools.Tests.Helpers
         [Fact]
         public void Hidden_helper_renders_html()
         {
-            var helper = HtmlHelperBuilder.GetHtmlHelper(new HiddenTestModel { SomeProperty = "test" });
+            var helper = HtmlHelperBuilder.GetTypedHtmlHelper(new HiddenTestModel { SomeProperty = "test" });
             var result = helper.Hidden(m => m.SomeProperty).ToHtmlString();
             Assert.Equal("<input id=\"SomeProperty\" name=\"SomeProperty\" type=\"hidden\" value=\"test\" />", result);
         }
@@ -16,7 +16,7 @@ namespace WebTools.Tests.Helpers
         [Fact]
         public void Hidden_helper_renders_class_attribute()
         {
-            var helper = HtmlHelperBuilder.GetHtmlHelper(new HiddenTestModel { SomeProperty = "aaa" });
+            var helper = HtmlHelperBuilder.GetTypedHtmlHelper(new HiddenTestModel { SomeProperty = "aaa" });
             var result = helper.Hidden(m => m.SomeProperty).Class("test-class").ToHtmlString();
             Assert.Equal("<input class=\"test-class\" id=\"SomeProperty\" name=\"SomeProperty\" type=\"hidden\" value=\"aaa\" />", result);
         }
@@ -24,7 +24,7 @@ namespace WebTools.Tests.Helpers
         [Fact]
         public void Hidden_helper_renders_id_attribute()
         {
-            var helper = HtmlHelperBuilder.GetHtmlHelper(new HiddenTestModel { SomeProperty = "asdf" });
+            var helper = HtmlHelperBuilder.GetTypedHtmlHelper(new HiddenTestModel { SomeProperty = "asdf" });
             var result = helper.Hidden(m => m.SomeProperty).Id("test-id").ToHtmlString();
             Assert.Equal("<input id=\"test-id\" name=\"SomeProperty\" type=\"hidden\" value=\"asdf\" />", result);
         }
@@ -32,7 +32,7 @@ namespace WebTools.Tests.Helpers
         [Fact]
         public void Hidden_helper_supports_attribute_combinations()
         {
-            var helper = HtmlHelperBuilder.GetHtmlHelper(new HiddenTestModel { SomeProperty = "qwerty" });
+            var helper = HtmlHelperBuilder.GetTypedHtmlHelper(new HiddenTestModel { SomeProperty = "qwerty" });
             var result = helper.Hidden(m => m.SomeProperty).Id("test-id").Class("some-class").ToHtmlString();
             Assert.Equal("<input class=\"some-class\" id=\"test-id\" name=\"SomeProperty\" type=\"hidden\" value=\"qwerty\" />", result);
         }
