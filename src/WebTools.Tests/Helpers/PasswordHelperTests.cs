@@ -30,6 +30,14 @@ namespace WebTools.Tests.Helpers
         }
 
         [Fact]
+        public void Password_helper_renders_data_attribute()
+        {
+            var helper = HtmlHelperBuilder.GetTypedHtmlHelper(new PasswordTestModel());
+            var result = helper.Password(m => m.Password).Data("superhero", "Green Lantern").ToHtmlString();
+            Assert.Equal("<input data-superhero=\"Green Lantern\" id=\"Password\" name=\"Password\" type=\"password\" />", result);
+        }
+
+        [Fact]
         public void Password_helper_renders_disabled_attribute()
         {
             var helper = HtmlHelperBuilder.GetTypedHtmlHelper(new PasswordTestModel());

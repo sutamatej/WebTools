@@ -47,6 +47,14 @@ namespace WebTools.Tests.Helpers
         }
 
         [Fact]
+        public void Action_link_helper_renders_data_attribute()
+        {
+            var helper = HtmlHelperBuilder.GetHtmlHelper(new ActionLinkTestController());
+            var result = helper.ActionLink<ActionLinkTestController>(c => c.Get(10), "me").Data("superhero", "Batman").ToHtmlString();
+            Assert.Equal("<a data-superhero=\"Batman\" href=\"/ActionLinkTest/Get/10\">me</a>", result);
+        }
+
+        [Fact]
         public void Action_link_helper_supports_attribute_combinations()
         {
             var helper = HtmlHelperBuilder.GetHtmlHelper(new ActionLinkTestController());

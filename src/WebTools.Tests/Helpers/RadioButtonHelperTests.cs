@@ -30,6 +30,14 @@ namespace WebTools.Tests.Helpers
         }
 
         [Fact]
+        public void Radio_button_helper_renders_data_attribute()
+        {
+            var helper = HtmlHelperBuilder.GetTypedHtmlHelper(new RadioButtonTestModel());
+            var result = helper.RadioButton(m => m.Value, RadioButtonTestEnum.Third).Data("superhero", "Wonder Woman").ToHtmlString();
+            Assert.Equal("<input data-superhero=\"Wonder Woman\" id=\"Value\" name=\"Value\" type=\"radio\" value=\"Third\" />", result);
+        }
+
+        [Fact]
         public void Radio_button_helper_renders_disabled_attribute()
         {
             var helper = HtmlHelperBuilder.GetTypedHtmlHelper(new RadioButtonTestModel());

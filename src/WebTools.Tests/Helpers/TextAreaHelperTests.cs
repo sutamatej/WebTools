@@ -30,6 +30,14 @@ namespace WebTools.Tests.Helpers
         }
 
         [Fact]
+        public void Text_area_helper_renders_data_attribute()
+        {
+            var helper = HtmlHelperBuilder.GetTypedHtmlHelper(new TextAreaTestModel());
+            var result = helper.TextArea(m => m.Area).Data("supervillain", "Joker").ToHtmlString();
+            Assert.Equal("<textarea cols=\"20\" data-supervillain=\"Joker\" id=\"Area\" name=\"Area\" rows=\"2\">\r\n</textarea>", result);
+        }
+
+        [Fact]
         public void Text_area_helper_renders_disabled_attribute()
         {
             var helper = HtmlHelperBuilder.GetTypedHtmlHelper(new TextAreaTestModel());

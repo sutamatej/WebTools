@@ -30,6 +30,14 @@ namespace WebTools.Tests.Helpers
         }
 
         [Fact]
+        public void Label_helper_renders_data_attribute()
+        {
+            var helper = HtmlHelperBuilder.GetTypedHtmlHelper(new LabelTestModel { SomeProperty = "ghj" });
+            var result = helper.Label(m => m.SomeProperty, "test").Data("superhero", "Hulk").ToHtmlString();
+            Assert.Equal("<label data-superhero=\"Hulk\" for=\"SomeProperty\">test</label>", result);
+        }
+
+        [Fact]
         public void Label_helper_supports_attribute_combinations()
         {
             var helper = HtmlHelperBuilder.GetTypedHtmlHelper(new LabelTestModel { SomeProperty = "qwe" });
