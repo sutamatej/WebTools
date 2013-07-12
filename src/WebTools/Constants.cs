@@ -18,6 +18,7 @@
             public const string Class = "class";
             public const string Id = "id";
 
+            public const string DataPrefix = "data-";
             public const string AccessKey = "accesskey";
             public const string Action = "action";
             public const string Autocomplete = "autocomplete";

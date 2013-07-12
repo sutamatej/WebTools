@@ -27,6 +27,36 @@ namespace WebTools.Tests.Helpers
         }
 
         [Fact]
+        public void Attribute_loader_adds_data_attribute()
+        {
+            var attributes = new Dictionary<string, object>();
+            var loader = new AttributeLoader<ElementTestInstance>(new ElementTestInstance(), attributes);
+            var result = loader.Data("some-name", "some-value");
+            Assert.Equal("some-value", attributes["data-some-name"]);
+            Assert.IsType<ElementTestInstance>(result);
+        }
+
+        [Fact]
+        public void Attribute_loader_adds_data_attribute_with_lowercase_name()
+        {
+            var attributes = new Dictionary<string, object>();
+            var loader = new AttributeLoader<ElementTestInstance>(new ElementTestInstance(), attributes);
+            var result = loader.Data("sOMe-NAmE", "some-value");
+            Assert.Equal("some-value", attributes["data-some-name"]);
+            Assert.IsType<ElementTestInstance>(result);
+        }
+
+        [Fact]
+        public void Attribute_loader_does_not_add_data_attribute_with_empty_name()
+        {
+            var attributes = new Dictionary<string, object>();
+            var loader = new AttributeLoader<ElementTestInstance>(new ElementTestInstance(), attributes);
+            var result = loader.Data(string.Empty, "some-value");
+            Assert.False(attributes.ContainsKey("data-"));
+            Assert.IsType<ElementTestInstance>(result);
+        }
+
+        [Fact]
         public void Attribute_loader_adds_checked_attribute()
         {
             var attributes = new Dictionary<string, object>();

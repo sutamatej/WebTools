@@ -30,6 +30,14 @@ namespace WebTools.Tests.Helpers
         }
 
         [Fact]
+        public void Textbox_helper_renders_data_attribute()
+        {
+            var helper = HtmlHelperBuilder.GetTypedHtmlHelper(new TextBoxTestModel());
+            var result = helper.TextBox(m => m.Text).Data("supervillain","Lex Luthor").ToHtmlString();
+            Assert.Equal("<input data-supervillain=\"Lex Luthor\" id=\"Text\" name=\"Text\" type=\"text\" value=\"\" />", result);
+        }
+
+        [Fact]
         public void Textbox_helper_renders_disabled_attribute()
         {
             var helper = HtmlHelperBuilder.GetTypedHtmlHelper(new TextBoxTestModel());
