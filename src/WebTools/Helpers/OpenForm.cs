@@ -30,6 +30,9 @@ namespace WebTools.Helpers
         {
             var route = new WebRoute<TController>(_action);
             var formTag = new TagBuilder(Constants.HtmlElements.Form);
+            //var urlHelper = new UrlHelper(_helper.ViewContext.RequestContext);
+            //var url = urlHelper.Action(route.Action, route.Controller);
+            //formTag.MergeAttribute(Constants.HtmlAttributes.Action, url);
             formTag.MergeAttribute(Constants.HtmlAttributes.Action, String.Format("{0}/{1}", route.Controller, route.Action));
             formTag.MergeAttribute(Constants.HtmlAttributes.Method, HtmlHelper.GetFormMethodString(_method));
             formTag.MergeAttributes(_htmlAttributes);
