@@ -31,6 +31,14 @@ namespace WebTools.Tests.Helpers
         }
 
         [Fact]
+        public void Open_form_helper_renders_data_attribute()
+        {
+            var helper = HtmlHelperBuilder.GetTypedHtmlHelper(new OpenFormTestModel());
+            var result = helper.OpenForm<OpenFormTestController>(c => c.Save(null), FormMethod.Post).Data("superhero", "Catwoman").ToHtmlString();
+            Assert.Equal("<form action=\"OpenFormTest/Save\" data-superhero=\"Catwoman\" method=\"post\">", result);
+        }
+
+        [Fact]
         public void Open_form_helper_renders_target_attribute()
         {
             var helper = HtmlHelperBuilder.GetTypedHtmlHelper(new OpenFormTestModel());

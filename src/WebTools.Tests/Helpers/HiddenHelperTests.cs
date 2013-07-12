@@ -30,6 +30,14 @@ namespace WebTools.Tests.Helpers
         }
 
         [Fact]
+        public void Hidden_helper_renders_data_attribute()
+        {
+            var helper = HtmlHelperBuilder.GetTypedHtmlHelper(new HiddenTestModel { SomeProperty = "asdf" });
+            var result = helper.Hidden(m => m.SomeProperty).Data("superhero","Nightwing").ToHtmlString();
+            Assert.Equal("<input data-superhero=\"Nightwing\" id=\"SomeProperty\" name=\"SomeProperty\" type=\"hidden\" value=\"asdf\" />", result);
+        }
+
+        [Fact]
         public void Hidden_helper_supports_attribute_combinations()
         {
             var helper = HtmlHelperBuilder.GetTypedHtmlHelper(new HiddenTestModel { SomeProperty = "qwerty" });

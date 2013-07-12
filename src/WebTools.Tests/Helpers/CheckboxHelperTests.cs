@@ -30,6 +30,14 @@ namespace WebTools.Tests.Helpers
         }
 
         [Fact]
+        public void Checkbox_helper_renders_data_attribute()
+        {
+            var helper = HtmlHelperBuilder.GetTypedHtmlHelper(new CheckBoxTestModel { SomeProperty = true });
+            var result = helper.CheckBox(m => m.SomeProperty).Data("superhero", "Flash").ToHtmlString();
+            Assert.Equal("<input checked=\"checked\" data-superhero=\"Flash\" id=\"SomeProperty\" name=\"SomeProperty\" type=\"checkbox\" value=\"true\" /><input name=\"SomeProperty\" type=\"hidden\" value=\"false\" />", result);
+        }
+
+        [Fact]
         public void Checkbox_helper_renders_disabled_attribute()
         {
             var helper = HtmlHelperBuilder.GetTypedHtmlHelper(new CheckBoxTestModel { SomeProperty = true });

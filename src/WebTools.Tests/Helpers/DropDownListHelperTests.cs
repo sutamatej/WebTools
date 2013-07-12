@@ -44,6 +44,15 @@ namespace WebTools.Tests.Helpers
         }
 
         [Fact]
+        public void Dropdown_list_helper_renders_data_attribute()
+        {
+            var model = new DropDownListTestModel();
+            var helper = HtmlHelperBuilder.GetTypedHtmlHelper(model);
+            var result = helper.DropDownList(m => m.Value, model.SelectList).Data("superhero", "Superman").ToHtmlString();
+            Assert.Equal("<select data-superhero=\"Superman\" id=\"Value\" name=\"Value\"><option value=\"1\">a</option>\r\n<option value=\"2\">b</option>\r\n<option value=\"3\">c</option>\r\n</select>", result);
+        }
+
+        [Fact]
         public void Dropdown_list_helper_renders_disabled_attribute()
         {
             var model = new DropDownListTestModel();

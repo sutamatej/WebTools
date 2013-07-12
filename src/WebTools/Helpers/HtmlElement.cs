@@ -21,6 +21,11 @@ namespace WebTools.Helpers
         {
             return _attributeLoader.Id(id);
         }
+
+        public TElement Data(string name, string value)
+        {
+            return _attributeLoader.Data(name, value);
+        }
     }
 
     public interface IHtmlElement<TElement>
@@ -28,5 +33,7 @@ namespace WebTools.Helpers
         TElement Class(string @class);
 
         TElement Id(string @id);
+
+        TElement Data(string name, string value);
     }
 }

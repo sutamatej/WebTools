@@ -34,6 +34,16 @@ namespace WebTools.Helpers
             return _elementInstance;
         }
 
+        public TElement Data(string name, string value)
+        {
+            if (!string.IsNullOrEmpty(name)) 
+            {
+                var attrib = string.Format("{0}{1}", Constants.HtmlAttributes.DataPrefix, name.ToLowerInvariant());
+                _htmlAttributes.Add(attrib, value);
+            }
+            return _elementInstance;
+        }
+
         public TElement Checked(bool @checked)
         {
             if (@checked)
